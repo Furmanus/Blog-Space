@@ -1,0 +1,17 @@
+.project
+.settings
+blog-client/.settings
+blog-client/target
+blog-client/.classpath
+blog-client/.project
+blog-client/src/test
+blog-protocol/.settings
+blog-protocol/target
+blog-protocol/.classpath
+blog-protocol/.project
+blog-protocol/src/test
+blog-server/.settings
+blog-server/target
+blog-server/.classpath
+blog-server/.project
+blog-server/src/test
