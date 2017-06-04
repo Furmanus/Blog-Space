@@ -9,15 +9,19 @@ import java.util.concurrent.ConcurrentHashMap;
 import pl.furman.protocol.Message;
 import pl.furman.server.annotations.Action;
 import pl.furman.server.annotations.Service;
+import pl.furman.server.database.DatabaseConnection;
+import pl.furman.server.database.JpaDatabaseConnection;
 
 public class ServicesManager {
 
 	private static ServicesManager instance = null;
+	private static DatabaseConnection connection = null;
 	private ConcurrentHashMap<String, Object> registry;
 	
 	private ServicesManager(){
 		
 		registry = new ConcurrentHashMap<>();
+		connection = new JpaDatabaseConnection();
 		
 		try{
 			
@@ -74,5 +78,10 @@ public class ServicesManager {
 		}
 		
 		return instance;
+	}
+	
+	public static DatabaseConnection getConnection(){
+		
+		return connection;
 	}
 }

@@ -9,6 +9,8 @@ import java.util.concurrent.Executors;
 
 import pl.furman.protocol.JsonMessage;
 import pl.furman.protocol.Message;
+import pl.furman.server.database.DatabaseConnection;
+import pl.furman.server.database.JpaDatabaseConnection;
 
 public class Server {
 

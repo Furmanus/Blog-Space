@@ -7,6 +7,8 @@ import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.net.Socket;
 
+import pl.furman.protocol.Message;
+
 public class ServerConnection implements Runnable {
 	
 	private Socket socket;
@@ -33,13 +35,14 @@ public class ServerConnection implements Runnable {
 			
 			while(true){
 				
-				String text = reader.readLine();
+				String receivedText = reader.readLine();
+
+				Message msg = Message.createNewMessage();
+				msg.load(receivedText);
 				
-				System.out.println(text);
+				ServicesManager.getInstance().invoke(msg);
 				
-				Double roll = Math.floor(Math.random() * 100);
-				
-				writer.write(roll.toString() + "\n");
+				writer.write("answer" + "\n");
 				writer.flush();
 			}
 		} catch (IOException e) {

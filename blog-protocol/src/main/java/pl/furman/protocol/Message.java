@@ -26,10 +26,12 @@ public abstract class Message{
 	public abstract String toString();
 
 	public String getService() {
+		
 		return service;
 	}
 
 	public void setService(String service) {
+		
 		this.service = service;
 	}
 	
@@ -44,10 +46,27 @@ public abstract class Message{
 	}
 
 	public HashMap<String, String> getParameters() {
+		
 		return parameters;
 	}
 
 	public void setParameters(HashMap<String, String> parameters) {
+		
 		this.parameters = parameters;
+	}
+	
+	public String getBody(){
+		
+		return body;
+	}
+	
+	public void setBody(String body){
+		
+		this.body = body;
+	}
+	
+	public static Message createNewMessage(){
+		
+		return new JsonMessage();
 	}
 }

@@ -14,14 +14,14 @@
 		<Text id="welcome">Welcome! Please log in</Text>
 		<HBox alignment="CENTER" spacing="3">
 			<Label>User Name:</Label>
-			<TextField /> 
+			<TextField fx:id="userName" /> 
 		</HBox>
 		<HBox alignment="CENTER" spacing="12">
 			<Label>Password: </Label>
-			<PasswordField />
+			<PasswordField fx:id="password" />
 		</HBox>
-		<Button prefWidth="128">Login</Button>
-		<Button prefWidth="128" onMouseClicked="#registerButtonHandler">Register</Button>
+		<Button prefWidth="128" onMouseClicked="#loginButtonEventHandler">Login</Button>
+		<Button prefWidth="128" onMouseClicked="#registerButtonEventHandler">Register</Button>
 		<TextArea prefWidth="256" prefHeight="64" editable="false" maxWidth="256" disable="true" id="messages"/>
 	</children>
 </VBox>

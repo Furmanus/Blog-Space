@@ -45,7 +45,7 @@ public class Client {
 		
 		try {
 			
-			writer.write(text + "/n");
+			writer.write(text + "\n");
 			writer.flush();
 		} catch (IOException e) {
 			

@@ -8,4 +8,18 @@
   <artifactId>blog-server</artifactId>
   <name>Server</name>
   <description>Server side for blog space project.</description>
+  	<dependencies>
+	  	<!-- https://mvnrepository.com/artifact/org.eclipse.persistence/eclipselink -->
+		<dependency>
+		    <groupId>org.eclipse.persistence</groupId>
+		    <artifactId>eclipselink</artifactId>
+		    <version>2.6.4</version>
+		</dependency>
+	  	<!-- https://mvnrepository.com/artifact/javax.persistence/persistence-api -->
+		<dependency>
+		    <groupId>javax.persistence</groupId>
+		    <artifactId>persistence-api</artifactId>
+		    <version>1.0.2</version>
+		</dependency>
+  	</dependencies>	
 </project>
