@@ -41,9 +41,6 @@ public class ServerConnection implements Runnable {
 				msg.load(receivedText);
 				
 				ServicesManager.getInstance().invoke(msg);
-				
-				writer.write("answer" + "\n");
-				writer.flush();
 			}
 		} catch (IOException e) {
 			

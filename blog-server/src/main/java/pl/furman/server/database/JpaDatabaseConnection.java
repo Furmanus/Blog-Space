@@ -25,7 +25,6 @@ public class JpaDatabaseConnection implements DatabaseConnection {
 	public JpaDatabaseConnection() {
 		
 		factory = Persistence.createEntityManagerFactory("blogspace");
-		em = factory.createEntityManager();
 	}
 
 	/**
@@ -40,12 +39,16 @@ public class JpaDatabaseConnection implements DatabaseConnection {
 		
 		try{
 			
+			em = factory.createEntityManager();
+			
 			em.getTransaction().begin();
 			
 			Query q = em.createQuery("SELECT c FROM User c WHERE c.userName = :name");
 			q.setParameter("name", userName);
 			
 			User result = (User)q.getSingleResult();
+			
+			em.close();
 			
 			if(result != null && result.getPassword().equals(password)){
 				
