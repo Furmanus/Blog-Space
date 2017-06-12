@@ -40,7 +40,7 @@ public class ServerConnection implements Runnable {
 				Message msg = Message.createNewMessage();
 				msg.load(receivedText);
 				
-				ServicesManager.getInstance().invoke(msg);
+				ServicesManager.getInstance().invoke(msg, writer);
 			}
 		} catch (IOException e) {
 			

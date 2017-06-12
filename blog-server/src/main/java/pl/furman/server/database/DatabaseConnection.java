@@ -14,7 +14,7 @@ public interface DatabaseConnection {
 	 * @param password {@code String} password to user account we want to verify.
 	 * @return Return {@code true} if given user with password exists in database, returns {@code false} otherwise.
 	 */
-	public boolean verifyUser(String userName, String password);
+	public String verifyUser(String userName, String password);
 	
 	
 	public void addUser(String userName, String password);

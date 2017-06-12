@@ -17,7 +17,7 @@ public class JsonMessage extends Message {
 		super();
 	}
 
-	public JsonMessage(String service, String action, HashMap<String, String> parameters, String body){
+	public JsonMessage(String service, String action, HashMap<String, Object> parameters, String body){
 		
 		this.service = service;
 		this.action = action;

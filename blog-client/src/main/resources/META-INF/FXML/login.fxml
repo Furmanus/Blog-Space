@@ -22,6 +22,6 @@
 		</HBox>
 		<Button prefWidth="128" onMouseClicked="#loginButtonEventHandler">Login</Button>
 		<Button prefWidth="128" onMouseClicked="#registerButtonEventHandler">Register</Button>
-		<TextArea prefWidth="256" prefHeight="64" editable="false" maxWidth="256" disable="true" id="messages"/>
+		<TextArea prefWidth="256" prefHeight="64" editable="false" maxWidth="256" disable="true" fx:id="messages"/>
 	</children>
 </VBox>

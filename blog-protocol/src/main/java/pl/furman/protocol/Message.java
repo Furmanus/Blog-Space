@@ -8,7 +8,7 @@ public abstract class Message{
 	protected String service;
 	protected String action;
 	protected String url;
-	protected HashMap<String, String> parameters;
+	protected HashMap<String, Object> parameters;
 	protected String body;
 	
 	public Message(){
@@ -45,12 +45,12 @@ public abstract class Message{
 		this.action = action;
 	}
 
-	public HashMap<String, String> getParameters() {
+	public HashMap<String, Object> getParameters() {
 		
 		return parameters;
 	}
 
-	public void setParameters(HashMap<String, String> parameters) {
+	public void setParameters(HashMap<String, Object> parameters) {
 		
 		this.parameters = parameters;
 	}

@@ -35,7 +35,7 @@ public class JpaDatabaseConnection implements DatabaseConnection {
 	 * @return Return {@code true} if given user with password exists in database, returns {@code false} otherwise.
 	 */
 	@Override
-	public boolean verifyUser(String userName, String password) {
+	public String verifyUser(String userName, String password) {
 		
 		try{
 			
@@ -52,20 +52,18 @@ public class JpaDatabaseConnection implements DatabaseConnection {
 			
 			if(result != null && result.getPassword().equals(password)){
 				
-				return true;
+				return "login successful";
 			}else{
 				
-				return false;
+				return "wrong password";
 			}
 		}catch(NoResultException e){
 		
-			//TODO send info about no such user
-			System.out.println("No such user");
-			return false;
+			return "no such user";
 		}catch(Throwable e){
 			//TODO send info to client about error
 			e.printStackTrace();
-			return false;
+			return "error with connection to database";
 		}
 	}
 
