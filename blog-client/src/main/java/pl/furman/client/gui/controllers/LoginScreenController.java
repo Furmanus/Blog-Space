@@ -30,7 +30,7 @@ public class LoginScreenController {
 	@FXML
 	private void registerButtonEventHandler(){
 		
-		Client.getInstance().write("dupa");
+		Client.getInstance().write("test");
 		
 		System.out.println(Client.getInstance().read());
 	}
