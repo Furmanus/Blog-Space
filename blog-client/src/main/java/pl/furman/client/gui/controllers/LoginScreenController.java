@@ -53,10 +53,17 @@ public class LoginScreenController {
 		msg.setParameters(params);
 		msg.setBody(""); //body is empty, we don't want to send any content
 		
-		Client.getInstance().write(msg.toString());
+		Client.getInstance().write(msg.toString()); //send a message
 		
-		msg.load(Client.getInstance().read());
-		messages.setText(msg.getBody());
+		msg.load(Client.getInstance().read()); //receive response
+		messages.setText(msg.getBody()); //display response on screen 
+		
+		if(msg.getBody().equals("login successful")){
+			
+			//TODO change strings to enums
+			Client.getInstance().setSessionId(msg.getParameters().get("sessionId").toString());
+			System.out.println("Id sesji: " + Client.getInstance().getSessionId());
+		}
 	}
 	
 	public void initialize(){

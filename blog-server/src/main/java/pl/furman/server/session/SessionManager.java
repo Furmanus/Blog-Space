@@ -1,15 +1,15 @@
 package pl.furman.server.session;
 
-import java.util.ArrayList;
+import java.util.HashMap;
 
 public class SessionManager {
 
 	private static SessionManager instance = null;
-	private ArrayList<Session> sessions;
+	private HashMap<String, Session> sessions;
 	
 	private SessionManager(){
 		
-		sessions = new ArrayList<>();
+		sessions = new HashMap<>();
 	}
 	
 	public static SessionManager getInstance(){
@@ -22,7 +22,7 @@ public class SessionManager {
 		return instance;
 	}
 	
-	public ArrayList<Session> getSessions(){
+	public HashMap<String, Session> getSessions(){
 		
 		return sessions;
 	}
